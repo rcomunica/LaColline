@@ -1,10 +1,6 @@
 @extends('layout')
 
-
+@include('nav_top')
 @section('container')
-
-    <h1>Hola :D</h1>
-
-    <img src="{{ asset('img/imagen-2.jpg') }}" alt="">
-
+    <h1>Hola mundo</h1>
 @endsection
