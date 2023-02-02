@@ -1,6 +1,6 @@
 @extends('layout')
 
-@include('nav_top')
+
 @section('container')
-    <h1>Hola mundo</h1>
+@include('nav_top')
 @endsection

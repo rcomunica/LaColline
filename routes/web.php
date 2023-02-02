@@ -6,11 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
-Route::get('/2', function () {
-    return view('blog');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
