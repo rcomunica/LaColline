@@ -8,20 +8,27 @@
 
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico')}}" type="image/x-icon">
 
+    {{-- Solicitud de archivos CSS (propios) --}}
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/navstyle.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/shopstyle.css')}}">
     
     {{-- Llamar a bibliotecas (Bootsrap / Jquery / OTHERS) --}}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="preconnect" href="{{ asset('assets/js/locomotive-scroll.css')}}" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://kit.fontawesome.com/03b0ac721b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="main" data-scroll-container>
         @yield('container') 
     </div>
 
@@ -98,5 +105,13 @@
     
 
     <script src="{{asset('assets/js/jquery.js')}}"></script>
+    <script src="{{ asset('assets/js/locomotive-scroll.js')}}"></script>
+    <script src="{{ asset('assets/js/locomotive.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+<script>
+    (function () {
+        var scroll = new LocomotiveScroll();
+    })();
+</script>
 </body>
 </html>
