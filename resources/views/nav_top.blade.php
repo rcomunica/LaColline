@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-0 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Shop</a>
+          <a class="nav-link" href="{{ route('shop')}}">Shop</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -24,8 +24,6 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-share-nodes"></i> Social Media</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
       </ul>
@@ -40,8 +38,22 @@
         <li><a class="dropdown-item" href="#">Français</a></li>
       </ul>
     </div>
+    @auth
+      <a href="{{route('dashboard')}}"><button type="button" class="btn btn-outline-primary me-3" >Panel</button></a>
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <a :href="route('logout')"
+                onclick="event.preventDefault();
+                            this.closest('form').submit();">
+             <button type="button" class="btn btn-outline-warning">Log out</button>
+      </a>
+    </form>
+      @else
       <a href="{{route('login')}}"><button type="button" class="btn btn-outline-success me-3" >Login</button></a>
       <a href="{{route('register')}}"><button type="button" class="btn btn-outline-primary">Register</button></a>
+    @endauth
+
+      
     </div>
   </div>
 </nav>
