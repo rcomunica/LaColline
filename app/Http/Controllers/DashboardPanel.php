@@ -8,15 +8,17 @@ use Illuminate\Http\Request;
 
 class DashboardPanel extends Controller
 {
-    public function UserList(User $users)
+    public function index(User $users)
     {
-        $users = User::all();
-        return view('userlist', ['users' => $users]);
+        return view('dashboard.userlist', [
+            'users' => User::latest()->paginate()
+        ]);
     }
 
-    public function ProductList(Productos $productos)
+    public function destroy(User $userlist)
     {
-        $productos = Productos::all();
-        return view('productlist', ['productos' => $productos]);
+        $userlist->delete();
+
+        return back();
     }
 }

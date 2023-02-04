@@ -28,8 +28,17 @@
                             <td>{{ strtoupper($user->type_user) }}</td>
                             
                             @if (Auth::user()->type_user == "administrator")
-                            <td><button type="button" class="btn btn-primary"><i class="fa-solid fa-user-pen"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></td>
+                            <td><button type="button" class="btn bg-primary btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                               
+                                <form action="{{ route('userlist.destroy', $user)}}" class="d-inline" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button 
+                                        type="submit"
+                                        class="btn bg-danger btn-danger"
+                                        onclick="return confirm('¿Esta seguro de eliminar a {{$user->name}} del sistema?')">
+                                </form><i class="fa-solid fa-trash"></i></button></td>
                             @endif
                           </tr>
                         @endforeach

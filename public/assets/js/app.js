@@ -1,0 +1,1 @@
+document.querySelector('.questionCard').style.opacity = 1;

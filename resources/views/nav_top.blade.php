@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top text-white">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{route('home')}}">
       <img src="{{asset('assets/img/sclog.png')}}" alt="Logo" width="50"  class="d-inline-block align-text-top">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

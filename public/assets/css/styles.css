@@ -6,15 +6,28 @@
     --last-color:           #2bc5c8;
   }
   
+html {
+    scroll-behavior: smooth;
+}
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-.container_parallax-1 , .main_index{
+  .main_index{
+    background-color: black;
+  }
+
+.container_parallax-1 {
   background: rgb(225,79,0) !important;
   background: linear-gradient(256deg, rgba(225,79,0,1) 0%, rgba(237,168,56,1) 91%) !important;
+}
+
+.container_parallax-2{
+  background: rgb(5,186,211);
+  background: linear-gradient(172deg, rgba(5,186,211,1) 13%, rgba(0,0,0,1) 95%);
 }
 
 

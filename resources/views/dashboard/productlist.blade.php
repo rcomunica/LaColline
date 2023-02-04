@@ -8,16 +8,16 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-                <table class="table">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4 ">
+                <button type="button" class="btn btn-info mb-4">Agregar</button>
+                <table stu class="table">
                     <thead>
                       <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Valor</th>
-                        @if (Auth::user()->type_user == "administrator")
+                        <th scope="col">Valor</th>
                         <th scope="col">Acciones</th>
-                        @endif
                       </tr>
                     </thead>
                     <tbody>
