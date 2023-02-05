@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardPanel;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\ShopController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
@@ -15,12 +16,11 @@ Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('shop', function () {
-    return view('shop');
-})->name('shop');
+Route::get('shop', [ShopController::class, 'index'])->name('shop');
 
-Route::get('productlist', [ProductosController::class, 'ProductList'])
-    ->name('productlist')
+
+Route::resource('products', ProductosController::class)
+    ->except('show')
     ->middleware(['auth', 'verified']);
 
 Route::resource('userlist', DashboardPanel::class)
