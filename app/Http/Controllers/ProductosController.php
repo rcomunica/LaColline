@@ -29,7 +29,7 @@ class ProductosController extends Controller
             'name' => 'required|unique:products,name',
             'details' => 'required',
             'price' => 'required',
-            'image' => 'mimes:jpg,jpeg,png,bmp,gif,svg|required|max:10240',
+            'image' => 'mimes:jpg,jpeg,png,bmp,gif,svg|required|max:10240|dimensions:min_width=450,min_height=300',
         ]);
 
 

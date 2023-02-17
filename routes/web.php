@@ -5,12 +5,21 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardPanel;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ShopController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Illuminate\Support\Facades\App;
 
 Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('/locale/{locale}', function ($locale) {
+
+    if (!in_array($locale, ['en', 'es', 'fr', 'ar'])) {
+        abort(404);
+    }
+
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');

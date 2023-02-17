@@ -22,7 +22,7 @@
                         <th scope="col">Acciones</th>
                         @endif
                       </tr>
-                    </thead>
+                    </thead> 
                     <tbody>
                         @foreach ($products as $producto)
                         <tr>

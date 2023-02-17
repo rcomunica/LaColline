@@ -9,7 +9,10 @@
 html {
     scroll-behavior: smooth;
 }
-
+::-webkit-scrollbar-thumb{
+  color: red;
+  background-color: red;
+}
   * {
     margin: 0;
     padding: 0;
@@ -17,12 +20,28 @@ html {
   }
 
   .main_index{
-    background-color: black;
+    background: #ffffff;
+    background: linear-gradient(180deg, #ffffff 90%, rgba(225,79,0,1) 5%, rgba(237,168,56,1) 5%);
+  }
+  
+  .main-title {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .main-title > h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 140px;
+  }
+  .main-title > h2{
+    font-family: 'Playfair Display', serif;
   }
 
 .container_parallax-1 {
   background: rgb(225,79,0) !important;
-  background: linear-gradient(256deg, rgba(225,79,0,1) 0%, rgba(237,168,56,1) 91%) !important;
+  background: linear-gradient(180deg, rgba(225,79,0,1) 5%, rgba(237,168,56,1) 91%) !important;
 }
 
 .container_parallax-2{

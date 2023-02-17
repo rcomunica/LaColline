@@ -10,7 +10,7 @@
 <label>Price</label><span class="text-xs text-red-600">@error('price') {{$message}} @enderror</span>
 <input type="text" name="price" class="rounded border-black-700 block text-black w-3/6 mb-4" value="{{old('price',$product->price)}}">
 
-<label>Upload Photo (max 1920x1920)</label><span class="text-xs text-red-600">@error('image') {{$message}} @enderror</span>
+<label>Upload Photo (max 450x300)</label><span class="text-xs text-red-600">@error('image') {{$message}} @enderror</span>
 <input type="file" accept="image/png, image/jpeg" multiple="true" name="image" class="rounded border-black-700 block text-black w-3/6 mb-4">
 
 <div class="flex justify-between items-center">

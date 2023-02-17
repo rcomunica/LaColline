@@ -9,24 +9,24 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-0 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
+          <a class="nav-link active nav-text" aria-current="page" href="{{route('home')}}">{{__('Home')}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#footer">Contact</a>
+          <a class="nav-link nav-text" href="#footer">{{__('Contact')}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('shop')}}">Shop</a>
+          <a class="nav-link nav-text" href="{{ route('shop')}}">{{__('Store')}}</a>
         </li>
       </ul>
     <div class="btn-group me-3">
-      <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-language"></i>
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Español</a></li>
-        <li><a class="dropdown-item" href="#">English</a></li>
-        <li><a class="dropdown-item" href="#">عربي</a></li>
-        <li><a class="dropdown-item" href="#">Français</a></li>
+        <li><a class="dropdown-item" href="{{ url('locale/es')}}">Español</a></li>
+        <li><a class="dropdown-item" href="{{ url('locale/en')}}">English</a></li>
+        <li><a class="dropdown-item" href="{{ url('locale/ar')}}">عربي</a></li>
+        <li><a class="dropdown-item" href="{{ url('locale/fr')}}">Français</a></li>
       </ul>
     </div>
     @auth
@@ -36,12 +36,12 @@
         <a :href="route('logout')"
                 onclick="event.preventDefault();
                             this.closest('form').submit();">
-             <button type="button" class="btn btn-outline-warning">Log out</button>
+             <button type="button" class="btn btn-outline-light">Log out</button>
       </a>
     </form>
       @else
-      <a href="{{route('login')}}"><button type="button" class="btn btn-outline-success me-3" >Login</button></a>
-      <a href="{{route('register')}}"><button type="button" class="btn btn-outline-primary">Register</button></a>
+      <a href="{{route('login')}}"><button type="button" class="btn btn-outline-dark me-3" >{{__('Login')}}</button></a>
+      <a href="{{route('register')}}"><button type="button" class="btn btn-outline-dark">{{__('messages.Register')}}</button></a>
     @endauth
 
       
